@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h4>Add New Course</h4>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-2">
+      <label>Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="course.title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-2">
+      <label>Description:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="course.description"
+        name="description"
+        required
+      />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <div *ngIf="submitted" class="text-success mt-2">
+      Course created successfully!
+    </div>
+  </form>
+</div>

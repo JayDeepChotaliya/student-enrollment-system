@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h4>Enroll Student in Course</h4>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-2">
+      <label>Select Student:</label>
+      <select
+        class="form-control"
+        [(ngModel)]="enrollment.studentId"
+        name="studentId"
+        required
+      >
+        <option *ngFor="let s of students" [value]="s.id">{{ s.name }}</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <label>Select Course:</label>
+      <select
+        class="form-control"
+        [(ngModel)]="enrollment.courseId"
+        name="courseId"
+        required
+      >
+        <option *ngFor="let c of courses" [value]="c.id">{{ c.title }}</option>
+      </select>
+    </div>
+    <button class="btn btn-success">Enroll</button>
+    <div *ngIf="submitted" class="text-success mt-2">
+      Enrollment successful!
+    </div>
+  </form>
+</div>

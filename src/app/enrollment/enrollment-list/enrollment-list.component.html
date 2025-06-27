@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h4>Enrollment List</h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Enrollment ID</th>
+        <th>Student</th>
+        <th>Course</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of enrollments">
+        <td>{{ e.id }}</td>
+        <td>{{ e.studentName }}</td>
+        <td>{{ e.courseTitle }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
